@@ -72,13 +72,23 @@ export const Login: React.FC<LoginProps> = ({ onLogin }) => {
                         "Mewujudkan ekosistem haji dan umrah yang terintegrasi, transparan, dan melayani."
                     </p>
                     
-                    {/* System Status - Moved Here */}
-                    <div className="inline-flex items-center gap-2.5 px-5 py-2.5 rounded-full bg-[#064E3B]/5 border border-[#064E3B]/10 text-[#064E3B] text-xs font-semibold tracking-wide shadow-sm">
-                        <span className="relative flex h-2.5 w-2.5">
-                          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                          <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
-                        </span>
-                        System Status: Online & Stable
+                    {/* System & Database Status */}
+                    <div className="flex flex-col xl:flex-row gap-4 items-center justify-center mt-4">
+                        <div className="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-[#064E3B]/5 border border-[#064E3B]/10 text-[#064E3B] text-sm font-bold tracking-wide shadow-sm hover:bg-[#064E3B]/10 transition-colors cursor-default">
+                            <span className="relative flex h-3 w-3">
+                              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                              <span className="relative inline-flex rounded-full h-3 w-3 bg-emerald-500"></span>
+                            </span>
+                            System: Online & Stable
+                        </div>
+                        
+                        <div className="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-[#064E3B]/5 border border-[#064E3B]/10 text-[#064E3B] text-sm font-bold tracking-wide shadow-sm hover:bg-[#064E3B]/10 transition-colors cursor-default">
+                             <span className="relative flex h-3 w-3">
+                              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                              <span className="relative inline-flex rounded-full h-3 w-3 bg-emerald-500"></span>
+                            </span>
+                            Database: Connected
+                        </div>
                     </div>
                  </div>
             </div>
