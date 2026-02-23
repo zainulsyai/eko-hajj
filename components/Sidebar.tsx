@@ -2,6 +2,7 @@
 import React from 'react';
 import { LayoutDashboard, BarChart3, PieChart, Settings, LogOut, BookOpen } from 'lucide-react';
 import { Page } from '../types';
+import { Logo } from './Logo';
 
 interface SidebarProps {
   currentPage: Page;
@@ -35,14 +36,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ currentPage, onNavigate, onLog
       <div className={`h-20 md:h-24 flex items-center ${isOpen ? 'justify-start px-6' : 'justify-center px-0'} border-b border-white/10 relative z-10 bg-gradient-to-b from-[#064E3B] to-transparent overflow-hidden`}>
          <div className={`flex items-center gap-4 transition-transform duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] ${!isOpen ? '' : ''}`}>
             {/* Logo */}
-            <div className="relative w-12 h-12 md:w-14 md:h-14 flex-shrink-0 flex items-center justify-center group cursor-default">
-                <div className="absolute inset-0 bg-[#D4AF37] rounded-xl blur-lg opacity-20 group-hover:opacity-40 transition-opacity duration-500"></div>
-                <div className="relative w-full h-full bg-gradient-to-br from-[#D4AF37] to-[#B4941F] rounded-xl flex items-center justify-center text-[#064E3B] shadow-xl border border-white/20 transform group-hover:scale-105 transition-transform duration-500">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className="w-6 h-6 md:w-7 md:h-7 drop-shadow-sm">
-                        <path d="M3 21h18M5 21V7l8-4 8 4v14" />
-                    </svg>
-                </div>
-            </div>
+            <Logo size="md" />
             
             {/* Title */}
             <div className={`leading-tight transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] ${isOpen ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10 absolute left-20 pointer-events-none'}`}>

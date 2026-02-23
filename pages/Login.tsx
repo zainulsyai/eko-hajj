@@ -1,6 +1,7 @@
 
 import React, { useState } from 'react';
 import { ArrowRight, User, Lock, Eye, EyeOff } from 'lucide-react';
+import { Logo } from '../components/Logo';
 
 interface LoginProps {
   onLogin: () => void;
@@ -42,88 +43,122 @@ export const Login: React.FC<LoginProps> = ({ onLogin }) => {
       </div>
 
       {/* --- LOGIN CARD (Matching Dashboard GlassCard Style) --- */}
-      <div className="w-full max-w-md px-4 md:px-6 relative z-10 animate-fade-in-up">
+      <div className="w-full max-w-md md:max-w-5xl px-4 md:px-6 relative z-10 animate-fade-in-up">
         
         {/* Card Container - White Glass to match Dashboard Cards */}
-        <div className="bg-white/90 backdrop-blur-2xl rounded-[2rem] md:rounded-[2.5rem] shadow-[0_20px_60px_-15px_rgba(0,0,0,0.3)] border border-white/50 overflow-hidden relative">
+        <div className="bg-white/90 backdrop-blur-2xl rounded-[2rem] md:rounded-[2.5rem] shadow-[0_20px_60px_-15px_rgba(0,0,0,0.3)] border border-white/50 overflow-hidden relative flex flex-col md:flex-row">
             
-            {/* Top Decoration */}
-            <div className="h-2 w-full bg-gradient-to-r from-[#064E3B] via-[#10B981] to-[#D4AF37]"></div>
+            {/* Top Decoration (Mobile Only) */}
+            <div className="md:hidden h-2 w-full bg-gradient-to-r from-[#064E3B] via-[#10B981] to-[#D4AF37]"></div>
 
-            <div className="p-6 md:p-10">
-                {/* Header */}
-                <div className="text-center mb-6 md:mb-8">
-                    {/* Logo from Sidebar (Scaled up) */}
-                    <div className="relative w-16 h-16 md:w-20 md:h-20 flex-shrink-0 flex items-center justify-center group cursor-default mb-4 mx-auto">
-                        <div className="absolute inset-0 bg-[#D4AF37] rounded-xl blur-lg opacity-20 group-hover:opacity-40 transition-opacity duration-500"></div>
-                        <div className="relative w-full h-full bg-gradient-to-br from-[#D4AF37] to-[#B4941F] rounded-xl flex items-center justify-center text-[#064E3B] shadow-xl border border-white/20 transform group-hover:scale-105 transition-transform duration-500">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className="w-8 h-8 md:w-10 md:h-10 drop-shadow-sm">
-                                <path d="M3 21h18M5 21V7l8-4 8 4v14" />
-                            </svg>
-                        </div>
+            {/* Left Side (Desktop Only - Branding) */}
+            <div className="hidden md:flex md:w-1/2 bg-gradient-to-br from-[#F0FDF4] to-[#FFFBEB] relative items-center justify-center p-12 lg:p-16 border-r border-white/50">
+                 {/* Decorative elements for left side */}
+                 <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-40 mix-blend-multiply"></div>
+                 <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-[#064E3B] via-[#10B981] to-[#D4AF37]"></div>
+                 
+                 <div className="relative z-10 text-center">
+                    <div className="mb-8 transform hover:scale-105 transition-transform duration-500 flex justify-center">
+                        <Logo size="xl" />
                     </div>
-                    <h1 className="text-2xl md:text-3xl font-bold text-[#064E3B] font-playfair mb-1">
+                    <h1 className="text-4xl lg:text-5xl font-bold text-[#064E3B] font-playfair leading-tight mb-4">
                         Dirjen <span className="text-[#D4AF37]">PEE</span>
                     </h1>
-                    <p className="text-[10px] md:text-xs font-bold text-gray-400 tracking-[0.1em] uppercase">
+                    <p className="text-sm lg:text-base font-bold text-gray-500 tracking-[0.2em] uppercase mb-10">
+                        Kementerian Haji dan Umrah RI
+                    </p>
+                    <div className="w-20 h-1.5 bg-[#D4AF37] mx-auto rounded-full mb-10 opacity-80"></div>
+                    <p className="text-gray-600 italic max-w-sm mx-auto leading-relaxed font-serif text-lg lg:text-xl mb-12">
+                        "Mewujudkan ekosistem haji dan umrah yang terintegrasi, transparan, dan melayani."
+                    </p>
+                    
+                    {/* System Status - Moved Here */}
+                    <div className="inline-flex items-center gap-2.5 px-5 py-2.5 rounded-full bg-[#064E3B]/5 border border-[#064E3B]/10 text-[#064E3B] text-xs font-semibold tracking-wide shadow-sm">
+                        <span className="relative flex h-2.5 w-2.5">
+                          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                          <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
+                        </span>
+                        System Status: Online & Stable
+                    </div>
+                 </div>
+            </div>
+
+            {/* Right Side (Form) */}
+            <div className="w-full md:w-1/2 p-8 md:p-12 lg:p-16 bg-white/60 flex flex-col justify-center">
+                
+                {/* Mobile Header (Visible only on mobile) */}
+                <div className="md:hidden flex flex-col items-center justify-center mb-8 text-center">
+                    <div className="mb-6">
+                        <Logo size="lg" />
+                    </div>
+                    <h1 className="text-2xl font-bold text-[#064E3B] font-playfair leading-none mb-1.5">
+                        Dirjen <span className="text-[#D4AF37]">PEE</span>
+                    </h1>
+                    <p className="text-[10px] font-bold text-gray-400 tracking-[0.1em] uppercase">
                         Kementerian Haji dan Umrah RI
                     </p>
                 </div>
 
+                {/* Desktop Header (Simple Welcome) */}
+                <div className="hidden md:block mb-10">
+                    <h2 className="text-3xl font-bold text-gray-800 mb-2">Selamat Datang</h2>
+                    <p className="text-gray-500 text-base">Silahkan masuk untuk mengakses dashboard.</p>
+                </div>
+
                 {/* Form */}
-                <form onSubmit={handleSubmit} className="space-y-5">
+                <form onSubmit={handleSubmit} className="space-y-6">
                     
-                    <div className="space-y-1.5">
-                        <label className="text-[10px] font-bold text-gray-500 uppercase tracking-wider ml-1">Username / ID Panitia</label>
+                    <div className="space-y-2">
+                        <label className="text-xs font-bold text-gray-500 uppercase tracking-wider ml-1">Username / ID Panitia</label>
                         <div className="relative group">
                             <div className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 group-focus-within:text-[#064E3B] transition-colors">
-                                <User size={20} className="md:w-[18px] md:h-[18px]" />
+                                <User size={20} className="md:w-[20px] md:h-[20px]" />
                             </div>
                             <input 
                                 type="text" 
                                 value={username}
                                 onChange={(e) => setUsername(e.target.value)}
-                                placeholder="Username / ID Panitia"
-                                className="w-full bg-gray-50 border border-gray-200 rounded-xl py-3 pl-10 pr-4 text-sm md:text-sm font-semibold text-gray-800 placeholder-gray-400 focus:bg-white focus:border-[#064E3B] focus:ring-4 focus:ring-[#064E3B]/10 outline-none transition-all"
+                                placeholder="Masukkan ID Panitia"
+                                className="w-full bg-white border border-gray-200 rounded-xl py-3.5 pl-12 pr-4 text-sm font-medium text-gray-800 placeholder-gray-400 focus:border-[#064E3B] focus:ring-4 focus:ring-[#064E3B]/10 outline-none transition-all shadow-sm group-hover:border-gray-300"
                             />
                         </div>
                     </div>
 
-                    <div className="space-y-1.5">
-                         <label className="text-[10px] font-bold text-gray-500 uppercase tracking-wider ml-1">Password</label>
+                    <div className="space-y-2">
+                         <label className="text-xs font-bold text-gray-500 uppercase tracking-wider ml-1">Password</label>
                          <div className="relative group">
                             <div className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 group-focus-within:text-[#064E3B] transition-colors">
-                                <Lock size={20} className="md:w-[18px] md:h-[18px]" />
+                                <Lock size={20} className="md:w-[20px] md:h-[20px]" />
                             </div>
                             <input 
                                 type={showPassword ? "text" : "password"}
                                 value={password}
                                 onChange={(e) => setPassword(e.target.value)}
-                                placeholder="Password"
-                                className="w-full bg-gray-50 border border-gray-200 rounded-xl py-3 pl-10 pr-10 text-sm md:text-sm font-semibold text-gray-800 placeholder-gray-400 focus:bg-white focus:border-[#064E3B] focus:ring-4 focus:ring-[#064E3B]/10 outline-none transition-all"
+                                placeholder="Masukkan Password"
+                                className="w-full bg-white border border-gray-200 rounded-xl py-3.5 pl-12 pr-12 text-sm font-medium text-gray-800 placeholder-gray-400 focus:border-[#064E3B] focus:ring-4 focus:ring-[#064E3B]/10 outline-none transition-all shadow-sm group-hover:border-gray-300"
                             />
                             <button 
                                 type="button"
                                 onClick={() => setShowPassword(!showPassword)}
-                                className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600 transition-colors"
+                                className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600 transition-colors p-1"
                             >
-                                {showPassword ? <EyeOff size={20} className="md:w-[18px] md:h-[18px]" /> : <Eye size={20} className="md:w-[18px] md:h-[18px]" />}
+                                {showPassword ? <EyeOff size={20} /> : <Eye size={20} />}
                             </button>
                         </div>
                     </div>
 
                     <div className="flex items-center justify-between pt-2">
-                        <label className="flex items-center gap-2 cursor-pointer">
-                            <input type="checkbox" className="w-4 h-4 rounded border-gray-300 text-[#064E3B] focus:ring-[#064E3B]" />
-                            <span className="text-xs font-medium text-gray-500">Ingat Saya</span>
+                        <label className="flex items-center gap-2.5 cursor-pointer group">
+                            <input type="checkbox" className="w-4 h-4 rounded border-gray-300 text-[#064E3B] focus:ring-[#064E3B] transition-colors cursor-pointer" />
+                            <span className="text-sm font-medium text-gray-500 group-hover:text-gray-700 transition-colors">Ingat Saya</span>
                         </label>
-                        <a href="#" className="text-xs font-bold text-[#D4AF37] hover:text-[#b08d24] transition-colors">Lupa Password?</a>
+                        <a href="#" className="text-sm font-bold text-[#D4AF37] hover:text-[#b08d24] transition-colors">Lupa Password?</a>
                     </div>
 
                     <button
                         type="submit"
                         disabled={loading}
-                        className="w-full py-4 mt-4 bg-[#064E3B] hover:bg-[#053d2e] text-white rounded-xl font-bold text-sm shadow-lg shadow-[#064E3B]/30 transition-all transform hover:scale-[1.02] active:scale-[0.98] disabled:opacity-70 disabled:cursor-not-allowed flex items-center justify-center gap-2 group"
+                        className="w-full py-4 mt-6 bg-[#064E3B] hover:bg-[#053d2e] text-white rounded-xl font-bold text-sm tracking-wide shadow-lg shadow-[#064E3B]/20 transition-all transform hover:scale-[1.01] active:scale-[0.99] disabled:opacity-70 disabled:cursor-not-allowed flex items-center justify-center gap-2.5 group"
                     >
                         {loading ? (
                              <>
@@ -135,35 +170,21 @@ export const Login: React.FC<LoginProps> = ({ onLogin }) => {
                              </>
                         ) : (
                              <>
-                                <span>Masuk</span>
+                                <span>MASUK DASHBOARD</span>
+                                <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
                              </>
                         )}
                     </button>
 
-                    <div className="mt-6 text-center">
-                        <p className="text-sm text-gray-600 font-medium tracking-wide">
+                    <div className="mt-8 text-center">
+                        <p className="text-sm text-gray-500 font-medium">
                             Belum punya akun?{' '}
-                            <a href="#" className="text-[#064E3B] font-bold hover:text-[#053d2e] hover:underline transition-all">
-                                Daftar Akun
+                            <a href="#" className="text-[#064E3B] font-bold hover:text-[#053d2e] hover:underline transition-all ml-1">
+                                Hubungi Admin
                             </a>
                         </p>
                     </div>
                 </form>
-            </div>
-
-             {/* Footer inside card */}
-             <div className="bg-gray-50 p-4 text-center border-t border-gray-100">
-                 <p className="text-[10px] text-gray-400">
-                    &copy; 2026 Kementerian Haji dan Umrah RI.
-                 </p>
-            </div>
-        </div>
-
-        {/* Floating Tag */}
-        <div className="mt-8 text-center animate-fade-in delay-300">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/10 text-emerald-100 text-[10px] font-medium tracking-wide">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#10B981] animate-pulse"></span>
-                System Status: Online & Stable
             </div>
         </div>
 
