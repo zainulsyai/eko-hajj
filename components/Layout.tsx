@@ -54,13 +54,27 @@ export const Layout: React.FC<LayoutProps> = ({ children, currentPage, onNavigat
              >
                 <AlignLeft size={24} />
              </button>
+
+             {/* Mobile Logo (only when sidebar is closed) */}
+             <div className={`md:hidden relative w-10 h-10 flex-shrink-0 flex items-center justify-center ${sidebarOpen ? 'hidden' : 'block'}`}>
+                <div className="absolute inset-0 bg-[#D4AF37] rounded-lg blur-md opacity-20"></div>
+                <div className="relative w-full h-full bg-gradient-to-br from-[#D4AF37] to-[#B4941F] rounded-lg flex items-center justify-center text-[#064E3B] shadow-md border border-white/20">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className="w-6 h-6">
+                        <path d="M3 21h18M5 21V7l8-4 8 4v14" />
+                    </svg>
+                </div>
+             </div>
              
              {/* Page Title */}
-             <div className="animate-fade-in">
-                <h2 className="text-base md:text-xl font-bold text-[#064E3B] line-clamp-1">
+             <div className="flex flex-col justify-center transition-all duration-300 ease-in-out">
+                <h2 className="text-base md:text-xl font-bold text-[#064E3B] line-clamp-1 whitespace-nowrap">
                     {currentPage === Page.DASHBOARD ? 'DASHBOARD EKOSISTEM' : currentPage.replace(/_/g, ' ').replace('FORM', '').trim()}
                 </h2>
-                <p className="text-[10px] md:text-xs text-gray-400 font-medium tracking-wide uppercase hidden sm:block">Kementerian Haji dan Umrah RI</p>
+                <div className={`overflow-hidden transition-all duration-300 ease-in-out ${sidebarOpen ? 'max-h-0 opacity-0' : 'max-h-10 opacity-100'}`}>
+                    <p className="text-[10px] md:text-xs text-gray-400 font-medium tracking-wide uppercase hidden sm:block whitespace-nowrap">
+                        Kementerian Haji dan Umrah RI
+                    </p>
+                </div>
              </div>
           </div>
 
