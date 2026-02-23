@@ -5,14 +5,15 @@ export const Skeleton = ({ className = '' }: { className?: string }) => (
 );
 
 export const StatCardSkeleton = () => (
-    <div className="relative overflow-hidden rounded-3xl p-6 border border-white/60 bg-white/40 backdrop-blur-sm shadow-sm h-full">
-        <div className="flex justify-between items-start mb-4">
-            <Skeleton className="w-12 h-12 rounded-2xl" />
-            <Skeleton className="w-16 h-6 rounded-full" />
+    <div className="relative overflow-hidden rounded-2xl md:rounded-3xl p-4 md:p-6 border border-white/60 bg-white/40 backdrop-blur-sm shadow-sm h-full min-h-[140px] md:min-h-[160px] flex flex-col justify-between">
+        <div className="flex justify-between items-start mb-2 md:mb-4">
+            <Skeleton className="w-8 h-8 md:w-12 md:h-12 rounded-xl md:rounded-2xl" />
+            <Skeleton className="w-10 h-4 md:w-16 md:h-6 rounded-full" />
         </div>
-        <div className="space-y-2">
-            <Skeleton className="w-3/4 h-8" />
-            <Skeleton className="w-1/2 h-4" />
+        <div className="space-y-1 md:space-y-2">
+            <Skeleton className="w-1/2 h-3 md:h-4" />
+            <Skeleton className="w-3/4 h-6 md:h-8" />
+            <Skeleton className="w-full h-2 md:h-3 mt-1 md:mt-2" />
         </div>
     </div>
 );

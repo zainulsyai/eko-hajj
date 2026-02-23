@@ -141,20 +141,20 @@ export const DataEntryPortal: React.FC<DataEntryPortalProps> = ({ onNavigate, st
                     )}
                 </div>
             ) : (
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-6">
                     {portalItems.map(item => (
-                        <button key={item.id} onClick={() => onNavigate(item.targetPage)} className="group relative flex flex-col justify-between text-left min-h-[160px] bg-white/60 backdrop-blur-sm border border-white/60 rounded-3xl shadow-sm hover:shadow-lg transition-all p-5 md:p-6 overflow-hidden active:scale-98">
+                        <button key={item.id} onClick={() => onNavigate(item.targetPage)} className="group relative flex flex-col justify-between text-left min-h-[140px] md:min-h-[160px] bg-white/60 backdrop-blur-sm border border-white/60 rounded-2xl md:rounded-3xl shadow-sm hover:shadow-lg transition-all p-4 md:p-6 overflow-hidden active:scale-98">
                             
                              {/* Visual Background (Watermark) - MATCHING DASHBOARD STAT CARD */}
                              <div className="absolute top-0 right-0 p-3 opacity-10 group-hover:opacity-20 transition-opacity pointer-events-none" style={{ color: item.color }}>
-                                <item.icon size={80} className="w-20 h-20 md:w-24 md:h-24" />
+                                <item.icon size={80} className="w-16 h-16 md:w-24 md:h-24" />
                              </div>
 
                              {/* Top Row: Icon & Badge */}
-                            <div className="flex justify-between items-start relative z-10">
+                            <div className="flex justify-between items-start relative z-10 mb-2 md:mb-0">
                                 {/* ICON CARD STYLE MATCHING DASHBOARD */}
-                                <div className="p-2.5 md:p-3 rounded-2xl text-white shadow-md flex items-center justify-center group-hover:scale-105 transition-transform duration-300" style={{ backgroundColor: item.color }}>
-                                    <item.icon size={20} strokeWidth={2} className="md:w-6 md:h-6" />
+                                <div className="p-2.5 md:p-3 rounded-xl md:rounded-2xl text-white shadow-md flex items-center justify-center group-hover:scale-105 transition-transform duration-300" style={{ backgroundColor: item.color }}>
+                                    <item.icon size={20} strokeWidth={2} className="w-5 h-5 md:w-6 md:h-6" />
                                 </div>
                                 <div className={`px-2 py-0.5 rounded-full text-[8px] font-bold uppercase tracking-wider flex items-center gap-1 border backdrop-blur-sm ${item.status === 'draft' ? 'bg-amber-50/80 text-amber-700 border-amber-100' : 'bg-gray-50/80 text-gray-400 border-gray-100'}`}>
                                     {item.status === 'draft' ? <History size={8} /> : <Activity size={8} />}
@@ -163,10 +163,10 @@ export const DataEntryPortal: React.FC<DataEntryPortalProps> = ({ onNavigate, st
                             </div>
 
                             {/* Middle: Content (Pushed to bottom by justify-between) */}
-                            <div className="relative z-10 mt-3 md:mt-2">
-                                <span className="text-[9px] md:text-[10px] font-bold uppercase tracking-widest block mb-1" style={{ color: item.color }}>{item.subtitle}</span>
-                                <h3 className="text-base md:text-lg font-bold text-gray-800 group-hover:text-[#064E3B] transition-colors font-playfair leading-tight mb-1">{item.title}</h3>
-                                <p className="text-[10px] md:text-xs text-gray-500 font-medium leading-relaxed line-clamp-2 w-[90%]">{item.description}</p>
+                            <div className="relative z-10 mt-1 md:mt-2">
+                                <span className="text-[10px] md:text-[10px] font-bold uppercase tracking-widest block mb-1 truncate" style={{ color: item.color }}>{item.subtitle}</span>
+                                <h3 className="text-base sm:text-lg md:text-xl font-bold text-gray-800 group-hover:text-[#064E3B] transition-colors font-playfair leading-tight mb-1 truncate">{item.title}</h3>
+                                <p className="text-[10px] md:text-xs text-gray-500 font-medium leading-relaxed line-clamp-2 w-full opacity-80">{item.description}</p>
                             </div>
 
                             {/* Hover Arrow */}
