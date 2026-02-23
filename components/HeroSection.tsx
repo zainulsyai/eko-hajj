@@ -33,10 +33,10 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ title, subtitle, curre
                     </div>
                 </div>
                 
-                <h1 className="text-xl md:text-4xl lg:text-5xl font-bold font-playfair mb-2 md:mb-4 leading-tight tracking-tight drop-shadow-sm">
+                <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold font-playfair mb-3 md:mb-4 leading-tight tracking-tight drop-shadow-sm">
                     {title}
                 </h1>
-                <p className="text-emerald-50/80 text-xs md:text-base max-w-2xl leading-relaxed font-light tracking-wide line-clamp-2 md:line-clamp-none">
+                <p className="text-emerald-50/80 text-sm md:text-base max-w-2xl leading-relaxed font-light tracking-wide line-clamp-2 md:line-clamp-none">
                     {subtitle}
                 </p>
             </div>
