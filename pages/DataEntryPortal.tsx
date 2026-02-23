@@ -85,7 +85,6 @@ export const DataEntryPortal: React.FC<DataEntryPortalProps> = ({ onNavigate, st
                 currentDate={currentDate}
                 statusFilter={statusFilter}
                 onStatusFilterChange={onStatusFilterChange}
-                className="mx-4 md:mx-0"
             >
                 <div className="flex flex-row items-center gap-2 w-full sm:w-auto">
                     {/* Search Bar - Height matched to Badge */}
