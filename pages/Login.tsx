@@ -101,68 +101,68 @@ export const Login: React.FC<LoginProps> = ({ onLogin }) => {
 
                 {/* Desktop Header (Simple Welcome) */}
                 <div className="hidden md:block mb-10">
-                    <h2 className="text-3xl font-bold text-gray-800 mb-2">Selamat Datang</h2>
-                    <p className="text-gray-500 text-base">Silahkan masuk untuk mengakses dashboard.</p>
+                    <h2 className="text-4xl font-bold text-gray-800 mb-3">Selamat Datang</h2>
+                    <p className="text-gray-500 text-lg">Silahkan masuk untuk mengakses dashboard.</p>
                 </div>
 
                 {/* Form */}
-                <form onSubmit={handleSubmit} className="space-y-6">
+                <form onSubmit={handleSubmit} className="space-y-7">
                     
-                    <div className="space-y-2">
-                        <label className="text-xs font-bold text-gray-500 uppercase tracking-wider ml-1">Username / ID Panitia</label>
+                    <div className="space-y-2.5">
+                        <label className="text-sm font-bold text-gray-600 uppercase tracking-wider ml-1">Username / ID Panitia</label>
                         <div className="relative group">
-                            <div className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 group-focus-within:text-[#064E3B] transition-colors">
-                                <User size={20} className="md:w-[20px] md:h-[20px]" />
+                            <div className="absolute left-5 top-1/2 -translate-y-1/2 text-gray-400 group-focus-within:text-[#064E3B] transition-colors">
+                                <User size={22} className="md:w-[22px] md:h-[22px]" />
                             </div>
                             <input 
                                 type="text" 
                                 value={username}
                                 onChange={(e) => setUsername(e.target.value)}
                                 placeholder="Masukkan ID Panitia"
-                                className="w-full bg-white border border-gray-200 rounded-xl py-3.5 pl-12 pr-4 text-sm font-medium text-gray-800 placeholder-gray-400 focus:border-[#064E3B] focus:ring-4 focus:ring-[#064E3B]/10 outline-none transition-all shadow-sm group-hover:border-gray-300"
+                                className="w-full bg-white border border-gray-200 rounded-xl py-4 pl-14 pr-4 text-lg font-medium text-gray-800 placeholder-gray-400 focus:border-[#064E3B] focus:ring-4 focus:ring-[#064E3B]/10 outline-none transition-all shadow-sm group-hover:border-gray-300"
                             />
                         </div>
                     </div>
 
-                    <div className="space-y-2">
-                         <label className="text-xs font-bold text-gray-500 uppercase tracking-wider ml-1">Password</label>
+                    <div className="space-y-2.5">
+                         <label className="text-sm font-bold text-gray-600 uppercase tracking-wider ml-1">Password</label>
                          <div className="relative group">
-                            <div className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 group-focus-within:text-[#064E3B] transition-colors">
-                                <Lock size={20} className="md:w-[20px] md:h-[20px]" />
+                            <div className="absolute left-5 top-1/2 -translate-y-1/2 text-gray-400 group-focus-within:text-[#064E3B] transition-colors">
+                                <Lock size={22} className="md:w-[22px] md:h-[22px]" />
                             </div>
                             <input 
                                 type={showPassword ? "text" : "password"}
                                 value={password}
                                 onChange={(e) => setPassword(e.target.value)}
                                 placeholder="Masukkan Password"
-                                className="w-full bg-white border border-gray-200 rounded-xl py-3.5 pl-12 pr-12 text-sm font-medium text-gray-800 placeholder-gray-400 focus:border-[#064E3B] focus:ring-4 focus:ring-[#064E3B]/10 outline-none transition-all shadow-sm group-hover:border-gray-300"
+                                className="w-full bg-white border border-gray-200 rounded-xl py-4 pl-14 pr-12 text-lg font-medium text-gray-800 placeholder-gray-400 focus:border-[#064E3B] focus:ring-4 focus:ring-[#064E3B]/10 outline-none transition-all shadow-sm group-hover:border-gray-300"
                             />
                             <button 
                                 type="button"
                                 onClick={() => setShowPassword(!showPassword)}
-                                className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600 transition-colors p-1"
+                                className="absolute right-5 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600 transition-colors p-1"
                             >
-                                {showPassword ? <EyeOff size={20} /> : <Eye size={20} />}
+                                {showPassword ? <EyeOff size={22} /> : <Eye size={22} />}
                             </button>
                         </div>
                     </div>
 
                     <div className="flex items-center justify-between pt-2">
-                        <label className="flex items-center gap-2.5 cursor-pointer group">
-                            <input type="checkbox" className="w-4 h-4 rounded border-gray-300 text-[#064E3B] focus:ring-[#064E3B] transition-colors cursor-pointer" />
-                            <span className="text-sm font-medium text-gray-500 group-hover:text-gray-700 transition-colors">Ingat Saya</span>
+                        <label className="flex items-center gap-3 cursor-pointer group">
+                            <input type="checkbox" className="w-5 h-5 rounded border-gray-300 text-[#064E3B] focus:ring-[#064E3B] transition-colors cursor-pointer" />
+                            <span className="text-base font-medium text-gray-600 group-hover:text-gray-800 transition-colors">Ingat Saya</span>
                         </label>
-                        <a href="#" className="text-sm font-bold text-[#D4AF37] hover:text-[#b08d24] transition-colors">Lupa Password?</a>
+                        <a href="#" className="text-base font-bold text-[#D4AF37] hover:text-[#b08d24] transition-colors">Lupa Password?</a>
                     </div>
 
                     <button
                         type="submit"
                         disabled={loading}
-                        className="w-full py-4 mt-6 bg-[#064E3B] hover:bg-[#053d2e] text-white rounded-xl font-bold text-sm tracking-wide shadow-lg shadow-[#064E3B]/20 transition-all transform hover:scale-[1.01] active:scale-[0.99] disabled:opacity-70 disabled:cursor-not-allowed flex items-center justify-center gap-2.5 group"
+                        className="w-full py-5 mt-8 bg-[#064E3B] hover:bg-[#053d2e] text-white rounded-xl font-bold text-base tracking-wide shadow-lg shadow-[#064E3B]/20 transition-all transform hover:scale-[1.01] active:scale-[0.99] disabled:opacity-70 disabled:cursor-not-allowed flex items-center justify-center gap-3 group"
                     >
                         {loading ? (
                              <>
-                                <svg className="animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                                <svg className="animate-spin h-6 w-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
                                     <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
                                     <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                                 </svg>
@@ -171,13 +171,13 @@ export const Login: React.FC<LoginProps> = ({ onLogin }) => {
                         ) : (
                              <>
                                 <span>MASUK DASHBOARD</span>
-                                <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
+                                <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
                              </>
                         )}
                     </button>
 
-                    <div className="mt-8 text-center">
-                        <p className="text-sm text-gray-500 font-medium">
+                    <div className="mt-10 text-center">
+                        <p className="text-base text-gray-500 font-medium">
                             Belum punya akun?{' '}
                             <a href="#" className="text-[#064E3B] font-bold hover:text-[#053d2e] hover:underline transition-all ml-1">
                                 Hubungi Admin
