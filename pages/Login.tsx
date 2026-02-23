@@ -57,10 +57,10 @@ export const Login: React.FC<LoginProps> = ({ onLogin }) => {
                         <Building2 size={28} className="md:w-8 md:h-8" />
                     </div>
                     <h1 className="text-2xl md:text-3xl font-bold text-[#064E3B] font-playfair mb-1">
-                        EkoHajj <span className="text-[#D4AF37]">2026</span>
+                        Dirjen <span className="text-[#D4AF37]">PEE</span>
                     </h1>
-                    <p className="text-[10px] md:text-xs font-bold text-gray-400 tracking-[0.2em] uppercase">
-                        Sistem Monitoring Terintegrasi
+                    <p className="text-[10px] md:text-xs font-bold text-gray-400 tracking-[0.1em] uppercase">
+                        Kementerian Haji dan Umrah RI
                     </p>
                 </div>
 

@@ -32,13 +32,13 @@ export const Sidebar: React.FC<SidebarProps> = ({ currentPage, onNavigate, onLog
       <div className="absolute top-0 right-0 w-64 h-64 bg-[#10B981] opacity-20 blur-[100px] rounded-full pointer-events-none"></div>
 
       {/* Brand Header */}
-      <div className="h-20 md:h-24 flex items-center justify-start px-6 border-b border-white/10 relative z-10 bg-gradient-to-b from-[#064E3B] to-transparent overflow-hidden whitespace-nowrap">
-         <div className={`flex items-center gap-4 transition-transform duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] ${!isOpen ? 'translate-x-1' : ''}`}>
+      <div className={`h-20 md:h-24 flex items-center ${isOpen ? 'justify-start px-6' : 'justify-center px-0'} border-b border-white/10 relative z-10 bg-gradient-to-b from-[#064E3B] to-transparent overflow-hidden`}>
+         <div className={`flex items-center gap-4 transition-transform duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] ${!isOpen ? '' : ''}`}>
             {/* Logo */}
-            <div className="relative w-10 h-10 md:w-12 md:h-12 flex-shrink-0 flex items-center justify-center group cursor-default">
+            <div className="relative w-12 h-12 md:w-14 md:h-14 flex-shrink-0 flex items-center justify-center group cursor-default">
                 <div className="absolute inset-0 bg-[#D4AF37] rounded-xl blur-lg opacity-20 group-hover:opacity-40 transition-opacity duration-500"></div>
                 <div className="relative w-full h-full bg-gradient-to-br from-[#D4AF37] to-[#B4941F] rounded-xl flex items-center justify-center text-[#064E3B] shadow-xl border border-white/20 transform group-hover:scale-105 transition-transform duration-500">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className="w-5 h-5 md:w-6 md:h-6 drop-shadow-sm">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className="w-6 h-6 md:w-7 md:h-7 drop-shadow-sm">
                         <path d="M3 21h18M5 21V7l8-4 8 4v14" />
                     </svg>
                 </div>
@@ -46,8 +46,8 @@ export const Sidebar: React.FC<SidebarProps> = ({ currentPage, onNavigate, onLog
             
             {/* Title */}
             <div className={`leading-tight transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] ${isOpen ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10 absolute left-20 pointer-events-none'}`}>
-                <h1 className="font-bold text-lg md:text-xl tracking-tight text-white drop-shadow-md font-playfair">EkoHajj <span className="text-[#D4AF37]">2026</span></h1>
-                <span className="text-[8px] md:text-[9px] text-white/60 tracking-[0.2em] uppercase font-semibold block mt-0.5">System Dashboard</span>
+                <h1 className="font-bold text-lg md:text-xl tracking-tight text-white drop-shadow-md font-playfair leading-tight whitespace-nowrap">Dirjen PEE</h1>
+                <span className="text-[9px] md:text-[10px] text-[#D4AF37] tracking-normal uppercase font-semibold block mt-0.5 leading-tight w-40 md:w-48 whitespace-normal">Kementerian Haji dan Umrah RI</span>
             </div>
          </div>
       </div>
